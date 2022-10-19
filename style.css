@@ -10,7 +10,7 @@ body{
 .word{
     padding: 10px 8px 0px 8px;
     font-size: 1.8rem;
-    font-family: cursive;
+    font-family: cursive, monospace;
     color: #deb887;
     background-color: #165366;
     padding-top: 0;
