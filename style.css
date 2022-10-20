@@ -5,24 +5,6 @@ html{
     color: rgb(204, 204, 204);
 }
 
-@media screen and (max-width: 75em) {
-    html {
-        font-size: 62.5%;
-    }
-  }
-  
-  @media screen and (max-width: 56.25em) {
-    html {
-        font-size: 56.25%;
-    }
-  }
-
-  @media screen and (max-width: 37.5em) {
-    html {
-        font-size: 50%;
-    }
- }
-
 .card-word{
     word-spacing: 0.1rem;
 
@@ -30,7 +12,7 @@ html{
 
 /* width */
 ::-webkit-scrollbar {
-    width: 0.8rem;
+    width: 0.2rem;
   }
   
   /* Track */
@@ -58,7 +40,7 @@ html{
 }
 
 .word-cards > div{
-    width: 30rem;
+    width: 20rem;
 }
 
 .word{
@@ -88,8 +70,9 @@ html{
 
 .list-meanings{
     height: 20rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-y: auto;
+    overflow-x:hidden;
+    overflow-wrap: break-word;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     padding-left: 2vw;
@@ -101,7 +84,8 @@ html{
 }
 
 .meaning-en{
-    padding: 0 0.6rem;
+    padding: 0 1rem 0 0.6rem;
+    border-radius: 8px;
     margin-right: -0.8rem;
     display: inline-block;
     color: #b8860b;
@@ -117,10 +101,11 @@ html{
 }
 
 .example{
-    margin-top: 0;
-    margin-left: 3rem;
-    font-family: ui-monospace;
-    list-style-type: none;
+    font-family: ui-monospace;    
+    text-align: justify;
+    list-style-type: disclosure-closed;
+    margin-bottom: 0;
+    margin: 0 0.4rem 0 2rem;
 }
 
 .word-answer{
@@ -148,3 +133,54 @@ li:not(:last-child){
     color: #99FF99;
     font-weight: 560;
 }
+
+@media screen and (max-width: 82em) {
+    html {
+        font-size: 65%;
+    }
+    .word-cards > div{
+        width: 24%;
+    }
+  }
+
+@media screen and (max-width: 75em) {
+    html {
+        font-size: 65%;
+    }
+    .word-cards > div{
+        width: 24%;
+    }
+  }
+  
+
+  @media screen and (max-width: 56.25em) {
+    html {
+        font-size: 65%;
+    }
+    .word-cards > div{
+        width: 32%;
+    }
+    .example{
+        margin: 0 0.4rem 0 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 38rem) {
+    .word-cards > div{
+        width: 48%;
+    }
+    .list-meanings{
+        height: 20rem;
+    }
+  }
+
+  @media screen and (max-width: 26.25em) {
+    .word-cards > div{
+        width: 100%;
+    }
+
+    .list-meanings{
+        height: fit-content;
+        max-height: 20rem;
+    }
+ }
