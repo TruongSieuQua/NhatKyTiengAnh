@@ -216,6 +216,7 @@ li:not(:last-child){
    text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+   line-height: 0.8;
 }
 
  @media screen and (max-width: 90em) {
