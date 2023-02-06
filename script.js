@@ -1,5 +1,4 @@
 "use strict"
-
 const GetFamily = (item) => {
     let url = "https://dictionary.cambridge.org/vi/dictionary/english-vietnamese/";
     const {id, word, family} = item.item;
@@ -73,16 +72,18 @@ const GetMeanings = (item) => {
     });
 }
 
-const RenderData = () => {
-    const { useState, useEffect } = React;
+const RenderData = (jsonData) => {
+    const { useState } = React;
     const [toggledId, setToggledId] = useState(null);
+    console.log(jsonData.jsonData);
+    const {data} = jsonData.jsonData.data;
     function handleClick(id) {
         setToggledId(id);
     }
 
     return (
         <div className="word-cards">
-            {data.data.map(item => {
+            {data.map(item => {
                 const family = < GetFamily item={item} />;
                 item.meanings.word = item.word;
                 const meanings = < GetMeanings item={item} />;
@@ -107,6 +108,3 @@ const RenderData = () => {
 function shuffle(){
     data.data.sort(() => Math.random() - 0.5);
 }
-
-document.getElementById("shuffle-btn").addEventListener('click', shuffle);
-ReactDOM.render(<RenderData />, document.getElementById("root"));
