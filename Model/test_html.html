@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+        href="https://rawcdn.githack.com/TruongSieuQua/NhatKyTiengAnh/4310dad652ad1a61aea35b1fc6982f8929a4e578/style.css">
+    <link rel="stylesheet" href="./test_style.css">
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <Button id="shuffle-btn" type="button">Shuffle</Button>
+    </div>
+    <div class="content">
+        <div id="root"></div>
+    </div>
+</body>
+
+<script src="https://rawcdn.githack.com/TruongSieuQua/NhatKyTiengAnh/4310dad652ad1a61aea35b1fc6982f8929a4e578/script.js" type="text/babel"></script>
+<script src="./test_script.js" type="text/babel"></script>
+<script type="text/babel">
+        /* data = {\"data\": [ */
+        let jsonData = {"data": []};
+    document.getElementById("shuffle-btn").addEventListener('click', shuffle(jsonData));
+    ReactDOM.render(<RenderData jsonData = {jsonData} />, document.getElementById("root"));
+</script>
+</html>
