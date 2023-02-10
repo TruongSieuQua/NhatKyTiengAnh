@@ -5,7 +5,11 @@ const WordSynonymLink = "https://www.vocabulary.com/dictionary/";
 
 function FamilyItem(props) {
     let word = props.value;
-    return <a href={WordFamilyLink + word} target="frame2" className="f-item">{" " + word + " "}</a>;
+    return (
+        <> <a href={WordFamilyLink + word} target="frame2" className="f-item">
+          {word}
+        </a> </>
+      );
 }
 
 //Xử lý 1 từ loại noun || adj || verb || adverb gồm một mảng các words
@@ -14,10 +18,9 @@ function FamilyType(props) {
     const listWordSameType = words.map(word => {
         return < FamilyItem key={id + type + word} value={word} />
     })
-    return <>
-        <span>{"(" + type + ")"}</span>
+    return (<> (<span>{type}</span>)
         {listWordSameType}
-    </>
+    </>);
 }
 //Duyệt qua tất cả loại từ noun, adj, verb, adverb
 const GetFamily = (props) => {
@@ -32,10 +35,10 @@ const GetFamily = (props) => {
 
 function SynonymItem(props) {
     return (
-        <a href={WordSynonymLink + props.value}
+        <> <a href={WordSynonymLink + props.value}
             target="frame3" className="s-item">
-            {" " + props.value + " "}
-        </a>
+            {props.value}
+        </a>, </>
     )
 }
 
@@ -46,7 +49,9 @@ const GetSynonyms = (props) => {
     let syns_Component = synonyms.map(synonym => {
         return < SynonymItem key={id + synonym} value={synonym} />
     })
-    return <div className="synonyms">Synonyms: {syns_Component}</div>
+    return (
+        <div className="synonyms">Synonyms: {syns_Component}</div>
+    );
 }
 
 
