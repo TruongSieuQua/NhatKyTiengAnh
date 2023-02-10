@@ -56,21 +56,16 @@ html{
    background-color: #1c1c27;
 }
 
-.word-cards > div{
+.card{
+   margin: 0.8rem;   
+   max-height: 66rem;
    color: #f1f2f1;
    background-color: black;
-   width: 30rem;
-   margin: 0.8rem;
-   flex: auto;
-}
-
-.card{
    display: flex;
    flex-direction: column;
    border-radius: 2rem;
    overflow: hidden;
    padding: 0 0 2.4rem;
-   height: fit-content;
 }
 
 /* width */
@@ -95,17 +90,15 @@ html{
  }
 
 .word{
-   padding: 0 0.4rem;
    font-size: 2.4rem;
+   letter-spacing: 0.2rem;
    font-weight: 600;
    color: #9acd32;
    background-color: #165366;
-   padding-top: 0;
    text-align: center;
 }
 
 .ipa{
-   padding: 0 1.2rem;
    font-size: 2rem;
    letter-spacing: 0.2rem;
    background-color: #165366;
@@ -136,13 +129,12 @@ html{
 }
 
 .synonyms{
+   min-height: 6rem;
    max-height: 10rem;
-   text-align: justify;
-   display: block;
    overflow-y: scroll;
    padding: 0 1.2rem;
    background-color: #3f777a;
-   margin: 2rem;
+   margin: 1rem 2rem;
    border-radius: 2rem;
 }
 
@@ -157,7 +149,6 @@ html{
 }
 
 .list-meanings{
-   max-height: 20rem;
    flex-grow: 1;
    background-color: #303030;
    overflow-y: auto;
@@ -226,7 +217,7 @@ li:not(:last-child){
 }
 
 .text-answer{
-   font-size: 2rem;
+   font-size: 1.8rem;
    color: #f1f2f1;
    display: flex;
    margin: 1rem 2rem 2rem;
@@ -235,7 +226,7 @@ li:not(:last-child){
 
 .text-answer label{
    white-space: nowrap;
-   line-height: 3.2rem;
+   line-height: 3rem;
 }
 .text-answer input{
    color: #f1f2f1;
@@ -248,6 +239,10 @@ li:not(:last-child){
    outline: none;
    text-align: center;
    margin: 0 0 0 1rem;
+}
+
+.card.unanswered{
+   max-height: 28rem;
 }
 
 .unanswered .word{
@@ -279,6 +274,7 @@ li:not(:last-child){
    height: 4rem;
    border-radius: 4rem;
    background-color: #f1f2f1;
+   color: #000000;
 }
 
 .btn.btn-control{
@@ -346,7 +342,7 @@ li:not(:last-child){
    .list-meanings{
       height: -moz-fit-content;
       height: fit-content;
-      max-height: 20rem;
+      max-height: 28rem;
    }
  }
 
