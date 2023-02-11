@@ -124,6 +124,10 @@ html{
    text-decoration: none;
 }
 
+.f-item + .f-item{
+   margin: 0 0 0 1.2rem;
+}
+
 .f-item:hover{
    color: white;
 }
