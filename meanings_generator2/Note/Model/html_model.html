@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://raw.githack.com/TruongSieuQua/NhatKyTiengAnh/main/Model/style.css">
+    <link rel="stylesheet" href="./Model/style.css">
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <Button id="btn-shuffle" class="btn btn-control" type="button">Shuffle</Button>
+        <Button id="btn-reviewmod" class="btn btn-control" type="button">Review</Button>
+        <Button id="btn-testmod" class="btn btn-control" type="button">Test</Button>
+    </div>
+    <div class="content">
+        <div id="root"></div>
+    </div>
+</body>
+
+<script src="https://raw.githack.com/TruongSieuQua/NhatKyTiengAnh/main/Model/script.js" type="text/babel"></script>
+<script src="./Model/script.js" type="text/babel"></script>
+<script type="text/babel">
+        /* data = {\"data\": [ */
+        let jsonData = {"data": []};
+    jsonData.data.sort(() => Math.random() - 0.5);
+    ReactDOM.render(<RenderData jsonData = {jsonData} />, document.getElementById("root"));
+    
+    AddShuffleEvent(document.getElementById("btn-shuffle"), 'click', jsonData, document.getElementsByClassName("card"));
+    AddchangeToReviewModeEvent(document.getElementById("btn-reviewmod"), 'click', document.getElementsByClassName("card"));
+    addChangeToTestModeEvent(document.getElementById("btn-testmod"), 'click', document.getElementsByClassName("card"));
+    addCheckAnswerEvent(document.querySelectorAll(".card .btn-answer"), 'click');
+    addResetAnswerEvent(document.querySelectorAll(".card .btn-reset"), 'click');
+</script>
+</html>

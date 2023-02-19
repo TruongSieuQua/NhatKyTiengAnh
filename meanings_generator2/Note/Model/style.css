@@ -1,0 +1,375 @@
+:root {
+   --header-height: 6.4rem;
+   --leftpane-width: 0rem;
+   --bottom-height: 6.4rem;
+ }
+
+html{
+   line-height: 1.7;
+   background-color: black;
+   font-size: 62.5%;
+}
+
+.header{
+   width: 100%;
+   height: var(--header-height);
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 1;
+   background-color: black;
+   display: flex;
+}
+
+.left-pane{
+   margin-top: var(--header-height);
+   width: var(--leftpane-width);
+   margin-bottom: var(--bottom-height);
+}
+
+.content{
+   margin-top: var(--header-height);
+   margin-left: var(--leftpane-width);
+   margin-bottom: var(--bottom-height);
+}
+
+.footer{
+   position: fixed;
+   width: 100%;
+   height: var(--bottom-height);
+   left: 0;
+   bottom: 0;
+   background-color: black;
+}
+
+#root{
+   letter-spacing: 0.16rem;
+   word-spacing: 0.1rem;
+   font-size: 1.6rem;/*1.6*/
+}
+
+.word-cards{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: stretch;
+   justify-content: space-between;
+   background-color: #1c1c27;
+}
+
+.word-cards > div{
+   color: #f1f2f1;
+   background-color: black;
+   width: 30rem;
+   margin: 0.8rem;
+   flex: auto;
+}
+
+.card{
+   display: flex;
+   flex-direction: column;
+   border-radius: 2rem;
+   overflow: hidden;
+   padding: 0 0 2.4rem;
+   height: fit-content;
+}
+
+/* width */
+::-webkit-scrollbar {
+   width: 0.8rem;
+ }
+ 
+ /* Track */
+ ::-webkit-scrollbar-track {
+   border-radius: 1rem;
+ }
+  
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+   background: #D5212E; 
+   border-radius: 1rem;
+ }
+ 
+ /* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+   background: #b30000;
+ }
+
+.word{
+   padding: 0 0.4rem;
+   font-size: 2.4rem;
+   font-weight: 600;
+   color: #9acd32;
+   background-color: #165366;
+   padding-top: 0;
+   text-align: center;
+}
+
+.ipa{
+   padding: 0 1.2rem;
+   font-size: 2rem;
+   letter-spacing: 0.2rem;
+   background-color: #165366;
+   display: table;
+   text-align: center;
+}
+
+.family{
+   text-align: justify;
+   letter-spacing: 0.2rem;
+   padding:0 1.2rem;
+   border-radius: 0 0 1.2rem 1.2rem;
+   display: table;
+   background-color: #483d8b;
+}
+
+.family span{
+   color: #ff25a4;
+}
+
+.f-item{
+   color: #7fffd4;
+   text-decoration: none;
+}
+
+.f-item + .f-item{
+   margin: 0 0 0 1.2rem;
+}
+
+.f-item:hover{
+   color: white;
+}
+
+.synonyms{
+   max-height: 10rem;
+   text-align: justify;
+   display: block;
+   overflow-y: scroll;
+   padding: 0 1.2rem;
+   background-color: #3f777a;
+   margin: 2rem;
+   border-radius: 2rem;
+}
+
+.synonyms > .s-item{
+   word-spacing: 0.8rem;
+   color: #7fffd4;
+   text-decoration: none; 
+}
+
+.s-item:hover{
+   color: white;
+}
+
+.list-meanings{
+   max-height: 20rem;
+   flex-grow: 1;
+   background-color: #303030;
+   overflow-y: auto;
+   overflow-x: hidden;
+   overflow-wrap: break-word;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 400;
+   padding-left: 1.6vw;
+   margin: 0.4rem 0.4rem 0.8rem;
+}
+
+.meaning:last-child{
+   margin-bottom: 1rem;
+}
+
+.en{
+   padding: 0 2rem 0 0.6rem;
+   border-radius: 8px;
+   margin-right: -1.2rem;
+   display: inline-block;
+   color: #b8860b;
+   background-color: darkgreen;
+}
+
+.vi{
+   display: inline-block;
+   padding: 0.2rem 0.4rem;
+   font-weight: 500;
+   color: #daa520;
+   background-color: #614800;
+   border-radius: 0.8rem;
+}
+
+.examples{
+   padding: 0;
+}
+
+.example{
+   font-family: ui-monospace;
+   list-style-type: disclosure-closed;
+   margin-bottom: 0;
+   margin: 0 0.4rem 0 2rem;
+}
+
+ul{
+   margin-left: 1.8rem;
+}
+
+li{ 
+   margin-top: 0;
+   font-family: ui-monospace;
+   list-style-type: none;
+}
+li:not(:last-child){
+   margin-bottom: 0.5rem;
+}
+
+.answer-warp{
+   background-color: #9acd32;
+}
+
+.answer{
+   font-weight: 560;
+   color: black;
+   line-height: 1;
+}
+
+.text-answer{
+   font-size: 2rem;
+   color: #f1f2f1;
+   display: flex;
+   margin: 1rem 2rem 2rem;
+   align-items: stretch;
+}
+
+.text-answer label{
+   white-space: nowrap;
+   line-height: 3.2rem;
+}
+.text-answer input{
+   color: #f1f2f1;
+   letter-spacing: 0.2rem;
+   overflow-y: auto;
+   flex-grow: 1;
+   border: 1px solid rgba(255, 255, 255, 0.25);
+   background-color: #303030;
+   border-radius: 5px;
+   outline: none;
+   text-align: center;
+   margin: 0 0 0 1rem;
+}
+
+.unanswered .word{
+   display: none;
+}
+
+.unanswered .ipa{
+   display: none;
+}
+
+.unanswered .family{
+   display: none;
+}
+
+.unanswered .synonyms{
+   display: none;
+}
+
+.unanswered .answer{
+   visibility: hidden;
+}
+
+/*
+*  Button
+*/
+.btn{
+   align-self: center;
+   min-width: 12rem;
+   height: 4rem;
+   border-radius: 4rem;
+   background-color: #f1f2f1;
+}
+
+.btn.btn-control{
+   width: 20%;
+   max-width: 24rem;
+}
+
+.card-btns{
+   display: flex;
+   justify-content: space-around;
+}
+
+.btn-answer{
+   width: 30%;
+}
+
+.text-answer input.correct{
+   color: #000000 !important;
+   background-color: #7fff00 !important;
+}
+
+.text-answer input.incorrect{
+   background-color: #cd5a68 !important;
+}
+
+.btn-reset{
+   width: 30%;
+}
+
+ @media screen and (max-width: 90em) {
+   html {
+       font-size: 56.25%;
+   }
+   .word-cards > div{
+       /* Three values: flex-grow | flex-shrink | flex-basis */
+       flex: 1 0 22%;
+   }
+ }
+
+/* @media screen and (max-width: 75em) {
+   html {
+       font-size: 56.25%;
+   }
+   .word-cards > div{
+       flex: 1 0 22%;
+   }
+ } */
+   
+ @media screen and (max-width: 56.25em) {
+   html {
+       font-size: 50%;
+   }
+   .word-cards > div{
+       flex: 1 0 30%;
+   }
+   .example{
+       margin: 0 0.4rem 0 1.2rem;
+   }
+ }
+
+ @media screen and (max-width: 38rem) {
+   .word-cards > div{
+       flex: 1 0 33%;
+   }
+   .list-meanings{
+      height: -moz-fit-content;
+      height: fit-content;
+      max-height: 20rem;
+   }
+ }
+
+ @media screen and (max-width: 26.25em) {
+   .word-cards > div{
+       flex: 1 0 99%;
+   }
+
+   .list-meanings{
+       height: fit-content;
+       max-height: 24rem;
+   }
+}
+
+#control {
+   display: flex;
+   width: 100%;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}

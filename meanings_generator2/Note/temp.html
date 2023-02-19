@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/TruongSieuQua/NhatKyTiengAnh/28cfbab49740c699ef28e0098cc97a0613b516a0/Model/style.css">
+    <link rel="stylesheet" href="./Model/style.css">
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <Button id="btn-shuffle" class="btn btn-control" type="button">Shuffle</Button>
+        <Button id="btn-reviewmod" class="btn btn-control" type="button">Review</Button>
+        <Button id="btn-testmod" class="btn btn-control" type="button">Test</Button>
+    </div>
+    <div class="content">
+        <div id="root"></div>
+    </div>
+</body>
+
+<script src="https://rawcdn.githack.com/TruongSieuQua/NhatKyTiengAnh/28cfbab49740c699ef28e0098cc97a0613b516a0/Model/script.js" type="text/babel"></script>
+<script src="./Model/script.js" type="text/babel"></script>
+<script type="text/babel">
+        /* data = {\"data\": [ */
+        let jsonData = {"data": [{"word":"nick","ipa":"/nik/","family":{"noun":[],"adjective":[],"verb":[],"adverb":[]},"synonyms":[],"meanings":[{"en":"a small cut","vi":"nấc; khía","examples":[{"en":"There was a nick in the doorpost."}]},{"en":"to make a small cut in something","vi":"khía","examples":[{"en":"He nicked his chin while he was shaving."}]}],"isFound":true},
+{"word":"hack","ipa":"/hӕk/","family":{"noun":[],"adjective":[],"verb":[],"adverb":[]},"synonyms":[],"meanings":[{"en":"to cut or chop up roughly","vi":"chặt; đốn","examples":[{"en":"The butcher hacked the beef into large pieces."}]},{"en":"to cut (a path etc) roughly","vi":"phát quang cây cối để lấy đường đi","examples":[{"en":"He hacked his way through the jungle"},{"en":"He hacked (out) a path through the jungle."}]},{"en":"a rough cut made in something","vi":"nhát chặt","examples":[{"en":"He marked the tree by making a few hacks on the trunk."}]},{"en":"a horse, or in the United States, a car, for hire.","vi":"ngựa, xe ô tô cho thuê"}],"isFound":true},
+{"word":"bay","ipa":"/bei/","family":{"noun":[],"adjective":[],"verb":[],"adverb":[]},"synonyms":["anchorage","arm","basin","bayou","bight","cove","estuary","fiord","firth","gulf","harbor","inlet","lagoon","loch","mouth","narrows","sound","strait"],"meanings":[{"en":"a wide inward bend of a coastline","vi":"vịnh","examples":[{"en":"The ship was anchored in the bay"},{"en":"Botany Bay."}]},{"en":"a separate compartment, area or room etc (usually one of several) set aside for a special purpose","vi":"gian nhà","examples":[{"en":"a bay in a library."}]},{"en":"(of horses) reddish-brown in colour/color","vi":"hồng","examples":[{"en":"a bay pony."}]},{"en":"(also bay tree) the laurel tree, the leaves of which are used for seasoning and in victory wreaths.","vi":"cây nguyệt quế"},{"en":"(especially of large dogs) to bark","vi":"sủa","examples":[{"en":"The hounds bayed at the fox."}]}],"isFound":true}]};
+    jsonData.data.sort(() => Math.random() - 0.5);
+    ReactDOM.render(<RenderData jsonData = {jsonData} />, document.getElementById("root"));
+    
+    AddShuffleEvent(document.getElementById("btn-shuffle"), 'click', jsonData, document.getElementsByClassName("card"));
+    AddchangeToReviewModeEvent(document.getElementById("btn-reviewmod"), 'click', document.getElementsByClassName("card"));
+    addChangeToTestModeEvent(document.getElementById("btn-testmod"), 'click', document.getElementsByClassName("card"));
+    addCheckAnswerEvent(document.querySelectorAll(".card .btn-answer"), 'click');
+    addResetAnswerEvent(document.querySelectorAll(".card .btn-reset"), 'click');
+</script>
+</html>
